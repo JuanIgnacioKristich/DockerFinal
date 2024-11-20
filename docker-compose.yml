@@ -15,7 +15,7 @@ services:
 
   backend:
     build:
-      context: C:\Users\ETEC\Desktop\Kristich-front-back\etec-pi-2024-backend-JuanIgnacioKristich
+      context: https://github.com/etec-integration-project/etec-pi-2024-backend-JuanIgnacioKristich.git
       dockerfile: Dockerfile
     restart: always
     depends_on:
@@ -34,7 +34,7 @@ services:
 
   frontend:
     build:
-      context: C:\Users\ETEC\Desktop\Kristich-front-back\etec-pi-2024-frontend-JuanIgnacioKristich
+      context: https://github.com/etec-integration-project/etec-pi-2024-frontend-JuanIgnacioKristich.git
       dockerfile: Dockerfile
     restart: always
     depends_on:
@@ -46,7 +46,9 @@ services:
       - REACT_APP_BACKEND_URL=backend:5000
 
   nginx:
-    build: C:\Users\ETEC\Desktop\nginex y docker\nginex\nginex-project\nginx
+    build:
+      context: https://github.com/JuanIgnacioKristich/nginx-final.git
+      dockerfile: nginx/Dockerfile
     ports:
       - "80:80"
     links:
